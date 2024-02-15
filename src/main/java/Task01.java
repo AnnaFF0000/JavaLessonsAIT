@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class Task01 {
+public class Task01 {
 }
