@@ -15,20 +15,20 @@ public class Homework {
             System.out.println("Введи второе число, с которым будет проведена операция: ");
             double number2 = scanner.nextDouble();
 
+            double sum = number1 + number2;
+            double difference = number1 - number2;
+            double valueOfProduct = number1 * number2;
+            double valueOfQuotient = number1 / number2;
+
+
             if (operation.equals("+")) {
-                double sum = number1 + number2;
                 System.out.println(sum);
-
             } else if (operation.equals("-")) {
-                double difference = number1 - number2;
                 System.out.println(difference);
-
             } else if (operation.equals("*")) {
-                double valueOfProduct = number1 * number2;
                 System.out.println(valueOfProduct);
 
             } else if (operation.equals("/")) {
-                double valueOfQuotient = number1 / number2;
                 if (number2 != 0) {
                     System.out.println(valueOfQuotient);
 
@@ -38,9 +38,10 @@ public class Homework {
                         number2 = scanner.nextDouble();
                         valueOfQuotient = number1 / number2;
                         System.out.println(valueOfQuotient);
-                    continue;
+
+                        continue;
                     }
-                    }
+                }
                 System.out.println("Хочешь продолжить? Да или Нет");
                 String answer = scanner.next();
                 if (answer.equals("Да")) {
@@ -50,15 +51,7 @@ public class Homework {
                     System.out.println("Конец");
                     scanner.close();
                 }
-                }
             }
         }
     }
-
-
-
-
-
-
-
-
+}
