@@ -1,57 +1,88 @@
 package lesson09;
 
 import static java.lang.Math.*;
+
 import java.util.Scanner;
 
 public class Homework_1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int randomNumber;
+        boolean newGame = false;
+        String Answer;
 
-        boolean continueGame = true;
         do {
             randomNumber = (int) (Math.random() * 100) + 1;
-            int attempts = 0;
             System.out.println(randomNumber);
+            int attempts = 1;
+            int number;
 
-            while (continueGame) {
-                System.out.println("Gebe eine Zahl zwischen 1 und 100 ein: ");
-                int number = scanner.nextInt();
-                int i = attempts++;
 
+            System.out.println(" Rate die Zahl. Gebe eine Zahl zwischen 1 und 100 ein. Du hast dabei 5 Versuche: ");
+            number = scanner.nextInt();
+
+            do {
 
                 if (number == randomNumber) {
                     System.out.println("Glückwunsch! Du hast die Zahl " + randomNumber + " beim " + attempts + ". Versuch erraten!");
-                    System.out.println("Möchtest du das Spiel nochmal spielen: y/n ? ");
-                    String answer;
-                    answer = scanner.next();
-                    if (answer.equalsIgnoreCase("n")) {
-                        System.out.println("Danke fürs Spielen. Ende. ");
-                        continueGame = false;
-                        scanner.close();
-                        continue;
-                    }
+                    break;
+                } else if (number > randomNumber) {
+                    System.out.println("Schade! Deine Zahl ist größer als die gesuchte Zahl! Du hast noch " + (5-attempts) + " Versuche. Gebe eine Zahl ein:  ");
                 } else {
-                    continueGame = true;
-                    randomNumber = (int) (Math.random() * 100) + 1;
-                    System.out.println(randomNumber);
-                    int a = attempts++;
+                    System.out.println("Schade! Deine Zahl ist kleiner als die gesuchte Zahl! Du hast noch " + (5-attempts) + " Gebe eine Zahl ein: ");
                 }
+                number = scanner.nextInt();
+                attempts++;
 
-
-                if (number > randomNumber) {
-
-                    System.out.println("Falsch! Deine Zahl ist größer als die gesuchte Zahl! Versuche noch einmal. Gebe eine Zahl ein:  ");
-                    int number1 = scanner.nextInt();
-                } else {
-                    System.out.println("Falsch! Deine Zahl ist kleiner als die gesuchte Zahl! Versuche noch einmal. Gebe eine Zahl ein: ");
-                    int number1 = scanner.nextInt();
-                }
-            }
-        }
-
+            } while (attempts < 5);
+            System.out.println("Möchtest du das Spiel nochmal spielen: y/n ? ");
+            Answer = scanner.next();
+            if (Answer.equalsIgnoreCase("y")) {
+                newGame = true;
+            }else newGame = false;
+        } while (newGame);
+        System.out.println("Danke fürs Spielen. Ende. ");
+        scanner.close();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
