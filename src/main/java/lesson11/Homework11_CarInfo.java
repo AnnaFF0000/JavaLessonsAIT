@@ -43,7 +43,7 @@ public class Homework11_CarInfo {
                 if (year < 1990) {
                     carInfo = "Beliebte Modelle vor 1990: Corolla, Camry.";
                 } else {
-                    carInfo = "Beliebte Modelle nach 1990: Camry, Corolla.";
+                    carInfo = "Beliebte Modelle nach 1990: Corolla, Lancer, Supra, Land Cruiser";
                 }
                 break;
             default:
