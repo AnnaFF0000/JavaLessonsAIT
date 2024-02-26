@@ -1,4 +1,5 @@
 package lesson11;
+
 import java.util.Scanner;
 
 public class Homework11_CarInfo {
@@ -25,7 +26,7 @@ public class Homework11_CarInfo {
                 if (year < 1990) {
                     carInfo = "Beliebte Modelle vor 1990: Mustang, Escort.";
                 } else {
-                   carInfo  = "Beliebte Modelle nach 1990: Focus, Fiesta.";
+                    carInfo = "Beliebte Modelle nach 1990: Focus, Fiesta.";
                 }
                 break;
 
@@ -53,6 +54,7 @@ public class Homework11_CarInfo {
         System.out.println("Herstellungsland: " + country);
         System.out.println("Informationen über die Marke " + brand + " im Jahr " + year + ":");
         System.out.println(carInfo);
+        scanner.close();
 
     }
 }
